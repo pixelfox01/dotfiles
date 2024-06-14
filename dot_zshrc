@@ -15,13 +15,7 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-# Case insensitive autocompletion
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-# Completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
