@@ -23,6 +23,24 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
+      lspconfig.emmet_ls.setup({
+        capabilities = capabilities,
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "less",
+          "sass",
+          "typescript",
+          "scss",
+          "svelte",
+          "pug",
+          "typescriptreact",
+          "vue",
+        }
+      })
       lspconfig.pyright.setup({
         capabilities = capabilities,
       })
