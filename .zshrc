@@ -5,6 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Set up the prompt
+autoload -Uz promptinit
+promptinit
+prompt adam1
+
+setopt histignorealldups sharehistory
+
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -15,27 +24,25 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
+bindkey "$terminfo[kcud1]" down-line-or-beginning-search
 
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
+path+=('/home/imran/.local/bin')
 
-# source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
-
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-eval "$(zoxide init zsh)"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.nvm/nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval "$(zoxide init zsh)"
+
 export EDITOR="nvim"
+export BROWSER="wslview"
 
 alias cc="clear -x"
 
@@ -47,4 +54,3 @@ alias lr="eza --sort Name --long --recurse"
 alias lra="eza --sort Name --long --recurse --all"
 alias lt="eza --sort Name --long --tree --git-ignore"
 alias lta="eza --sort Name --long --tree --all"
-
