@@ -13,7 +13,7 @@ prompt adam1
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+bindkey -v
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -23,6 +23,9 @@ setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
