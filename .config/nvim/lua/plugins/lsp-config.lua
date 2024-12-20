@@ -1,7 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
-    config = true
+    config = true,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -20,9 +20,6 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
       lspconfig.emmet_ls.setup({
         capabilities = capabilities,
         filetypes = {
@@ -39,7 +36,7 @@ return {
           "pug",
           "typescriptreact",
           "vue",
-        }
+        },
       })
       lspconfig.pyright.setup({
         capabilities = capabilities,
