@@ -15,6 +15,8 @@ setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -v
 
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
 # history setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -57,3 +59,7 @@ alias lr="eza --sort Name --long --recurse"
 alias lra="eza --sort Name --long --recurse --all"
 alias lt="eza --sort Name --long --tree --git-ignore"
 alias lta="eza --sort Name --long --tree --all"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
