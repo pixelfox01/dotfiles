@@ -15,7 +15,15 @@ return {
         },
       },
     },
+
     config = function()
+      vim.diagnostic.config {
+        virtual_text = false,
+        float = {
+          border = "rounded",
+        }
+      }
+
       local handlers = {
         ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
         ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
@@ -25,6 +33,7 @@ return {
 
       -- set up LSPs here
       require('lspconfig').lua_ls.setup { handlers = handlers, capabilities = capabilities }
+      require('lspconfig').pyright.setup { handlers = handlers, capabilities = capabilities }
 
       -- Format on save
       vim.api.nvim_create_autocmd("LspAttach", {

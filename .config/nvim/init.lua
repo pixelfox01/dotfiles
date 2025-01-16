@@ -10,6 +10,10 @@ vim.keymap.set("n", "<Esc>", vim.cmd.nohlsearch)
 vim.keymap.set("n", "H", "_")
 vim.keymap.set("n", "L", "$")
 
+vim.keymap.set("n", "<CR>", "o<Esc>")
+
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+
 -- highlight yanked text
 vim.cmd [[
   augroup highlight_yank

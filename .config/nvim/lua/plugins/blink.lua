@@ -16,11 +16,13 @@ return {
       completion = {
         menu = {
           border = "rounded",
-          auto_show = function(ctx) return ctx.mode ~= 'cmdline' end
         },
         documentation = {
           window = { border = "rounded" }
         },
+      },
+      sources = {
+        cmdline = {}
       },
       signature = {
         enabled = true,
