@@ -18,8 +18,9 @@ return {
           border = "rounded",
         },
         documentation = {
-          window = { border = "rounded" }
+          window = { border = "rounded" },
         },
+        list = { selection = { preselect = false, auto_insert = true } },
       },
       sources = {
         cmdline = {}

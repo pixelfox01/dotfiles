@@ -1,5 +1,23 @@
 return {
   {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup(
+        {
+          ui = {
+            border = 'rounded'
+          }
+        }
+      )
+    end
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup()
+    end
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "saghen/blink.cmp",
@@ -34,6 +52,8 @@ return {
       -- set up LSPs here
       require('lspconfig').lua_ls.setup { handlers = handlers, capabilities = capabilities }
       require('lspconfig').pyright.setup { handlers = handlers, capabilities = capabilities }
+      require('lspconfig').gopls.setup { handlers = handlers, capabilities = capabilities }
+      require('lspconfig').sqls.setup { handlers = handlers, capabilities = capabilities }
 
       -- Format on save
       vim.api.nvim_create_autocmd("LspAttach", {
