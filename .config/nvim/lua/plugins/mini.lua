@@ -5,11 +5,6 @@ return {
     opts = {},
   },
   {
-    'echasnovski/mini.surround',
-    version = false,
-    opts = {},
-  },
-  {
     'echasnovski/mini.ai',
     version = false,
     dependencies = {

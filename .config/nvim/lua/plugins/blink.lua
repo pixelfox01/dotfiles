@@ -22,8 +22,8 @@ return {
         },
         list = { selection = { preselect = false, auto_insert = true } },
       },
-      sources = {
-        cmdline = {}
+      cmdline = {
+        enabled = false
       },
       signature = {
         enabled = true,
