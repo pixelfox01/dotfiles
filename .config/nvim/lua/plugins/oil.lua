@@ -5,6 +5,12 @@ return {
   opts = {
     delete_to_trash = true,
     skip_confirm_for_simple_edits = true,
+    float = {
+      border = 'rounded',
+      win_options = {
+        winblend = 0
+      }
+    }
   },
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },

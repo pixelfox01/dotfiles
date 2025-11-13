@@ -1,17 +1,17 @@
 return {
   {
-    'saghen/blink.cmp',
-    dependencies = 'rafamadriz/friendly-snippets',
+    "saghen/blink.cmp",
+    dependencies = "rafamadriz/friendly-snippets",
 
-    version = '*',
+    version = "*",
 
     opts = {
       keymap = {
-        preset = 'enter',
+        preset = "enter",
       },
       appearance = {
-        use_nvim_cmp_as_default = true,
-        nerd_font_variant = 'mono'
+        use_nvim_cmp_as_default = false,
+        nerd_font_variant = "mono",
       },
       completion = {
         menu = {
@@ -23,14 +23,14 @@ return {
         list = { selection = { preselect = false, auto_insert = true } },
       },
       cmdline = {
-        enabled = false
+        enabled = false,
       },
       signature = {
         enabled = true,
         window = {
-          border = "rounded"
+          border = "rounded",
         },
       },
-    }
+    },
   },
 }

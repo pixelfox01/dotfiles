@@ -1,29 +1,19 @@
 return {
   {
-    "0xstepit/flow.nvim",
-    lazy = false,
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
-    tag = "v2.0.0",
     opts = {
-      theme = {
-        transparent = true,
+      transparent_mode = false,
+      overrides = {
+        Pmenu = { link = "Normal" },
+        NormalFloat = { link = "Normal" },
+        FloatBorder = { link = "Normal" },
+        SignColumn = { link = "Normal" },
       },
     },
     config = function(_, opts)
-      require("flow").setup(opts)
-    end
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-      flavour = "mocha",
-      transparent_background = true,
-    },
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd.colorscheme("catppuccin")
+      require("gruvbox").setup(opts)
+      vim.cmd.colorscheme("gruvbox")
     end,
-  }
+  },
 }
