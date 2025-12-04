@@ -2,7 +2,9 @@
 -- Configurations for each LSP can be found in the nvim/lsp/ directory
 vim.lsp.enable({
   "lua_ls",
-  "pyright",
+  "pylsp",
+  "ruff",
+  "ts_ls",
 })
 
 vim.diagnostic.config({

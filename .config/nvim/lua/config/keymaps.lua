@@ -1,15 +1,27 @@
-vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<leader>x", ":.lua<CR>")
-vim.keymap.set("v", "<leader>x", ":lua<CR>")
+local function map(mode, lhs, rhs, opts)
+  opts = opts or {}
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
 
-vim.keymap.set("n", "<Esc>", vim.cmd.nohlsearch)
+map("n", "<leader><leader>x", "<cmd>source %<CR>")
+map("n", "<leader>x", ":.lua<CR>")
+map("v", "<leader>x", ":lua<CR>")
 
-vim.keymap.set("n", "H", "_")
-vim.keymap.set("n", "L", "$")
+map("n", "<Esc>", vim.cmd.nohlsearch)
 
-vim.keymap.set("n", "<CR>", "o<Esc>")
+map("n", "H", "_")
+map("n", "L", "$")
 
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+map("n", "<CR>", "o<Esc>")
 
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+map("n", "<leader>e", vim.diagnostic.open_float)
+
+-- Splits navigation
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-l>", "<C-w>l")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+
+-- Quickfix
+map("n", "<M-j>", "<cmd>cnext<CR>")
+map("n", "<M-k>", "<cmd>cprev<CR>")
